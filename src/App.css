@@ -1,38 +1,223 @@
-.App {
-  text-align: center;
+
+h1 {
+    font-size: 48px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+label {
+    margin-top: 50px;
+    font-weight: 500;
+    display: block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+input {
+    height: 25px;
+    margin-top: 10px;
+    padding: 7px 15px;
+    font-size: 16px;
+    width: 30vw;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+    transition: all .2s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input:focus {
+    border-color: #0094FF;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px rgba(0, 126, 255, 0.1);
+    outline: none;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+    height: 41px;
+    max-width: 150px;
+    margin-left: 20px;
+    padding: 7px 15px;
+    border-radius: 8px;
+    background-color: #0094FF;
+    /*box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);*/
+    box-shadow: none;
+    font-size: 17px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+    border: 1px solid #0094FF;
+    transition: box-shadow .2s ease, background-color .2s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:disabled {
+    opacity: .5;
+    cursor: not-allowed !important;
+}
+
+button:focus {
+    box-shadow: 0 0 0 2px #0094FF inset, 0 0 0 4px #c5f1ff inset;
+}
+
+button:hover {
+    background-color: #007eea;
+
+}
+
+footer {
+    margin-top: auto;
+    margin-left: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #919191;
+    background-color: rgb(42, 42, 42);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+blockquote {
+    color: #919191;
+}
+
+.cntLink {
+    text-decoration: none;
+    color: #919191;
+    transition: color .3s ease;
+}
+
+.cntLink:hover {
+    color: #484848;
+    font-weight: 500;
+}
+
+.footerLink {
+    text-decoration: none;
+    color: #919191;
+    transition: color .3s ease;
+}
+
+a:hover {
+    color: #d4d4d4;
+    font-weight: 500;
+}
+
+.imageWrapper {
+    margin-top: 130px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    border-radius: 5px;
+}
+
+.imageSubWrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 5px;
+    height: 240px;
+    width: 320px;
+    cursor: pointer;
+}
+
+.spoiler {
+    filter: blur(17px);
+    transition: filter .3s ease-in-out;
+}
+
+.spoilerInactive {
+    filter: blur(0px);
+    transition: filter .3s ease-in-out;
+
+}
+
+.spoilerPill {
+    cursor: pointer;
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    padding: 4px 10px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 600;
+    z-index: 100;
+    user-select: none;
+    opacity: 1;
+    transition: opacity .3s ease;
+}
+
+.explanation {
+    max-width: 650px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 10px auto 0;
+}
+
+.statusWrapper {
+    margin-top: 10px;
+}
+
+.statusIcon {
+
+}
+
+.statusText {
+    margin-left: 5px;
+}
+
+.safe {
+    color: #36b244;
+    font-weight: 600;
+}
+
+.notSafe {
+    color: #ff5549;
+    font-weight: 600;
+}
+
+.error {
+    color: #de9800;
+    font-weight: 600;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+.spinner {
+    -webkit-animation: rotating 1s linear infinite;
+    -moz-animation: rotating 1s linear infinite;
+    -ms-animation: rotating 1s linear infinite;
+    -o-animation: rotating 1s linear infinite;
+    animation: rotating 1s linear infinite;
 }
