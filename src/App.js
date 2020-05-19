@@ -97,7 +97,7 @@ export default function App() {
 
     return(
       <div>
-          <h1>FrickRoll!</h1>
+          <h1>FrickRoll</h1>
           <h4>Never gonna give you a rickroll again!</h4>
           <form onSubmit={handleFormSubmit}>
               <input id="url" type="url" placeholder="Enter suspicious link here…" disabled={currentlyWorking} onChange={e => {setQuery(e.target.value); setResult(undefined)}}/>
@@ -128,7 +128,7 @@ export default function App() {
 
           <footer>
               <div className="footerWrapper">
-                  <a href="#" onClick={openRickRoll} className="footerLink">How it works</a> · <a href="https://github.com/realmayus/FrickRoll" className="footerLink">Source Code</a> · <a href="https://realmayus.xyz/legal" className="footerLink">Legal stuff</a> · <a href="https://realmayus.xyz/legal" className="footerLink">Report false negative</a>
+                  <a href="#" onClick={openRickRoll} className="footerLink">How it works</a> · <a href="https://github.com/realmayus/FrickRoll" className="footerLink">Source Code</a> · <a href="https://realmayus.xyz/legal" className="footerLink">Legal stuff</a> · <a href="https://github.com/realmayus/FrickRoll/issues" className="footerLink">Report false negative</a>
               </div>
           </footer>
       </div>
