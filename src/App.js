@@ -6,18 +6,48 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBug, faCheck, faCircleNotch, faCoffee, faSpinner, faTimes} from "@fortawesome/free-solid-svg-icons";
 
 
-const database_url = "https://github.com/realmayus/frickroll/"
+const database_url = "https://raw.githubusercontent.com/realmayus/FrickRoll/master/database.txt";
 
 export default function App() {
     const [spoiler, setSpoiler] = useState(true);
-    const [query, setQuery] = useState("");
-    const [result, setResult] = useState(null);
-    const [currentlyWorking, setCurrentlyWorking] = useState(true);
+    const [query, setQuery] = useState(null);
+    const [result, setResult] = useState(undefined);
+    const [error, setError] = useState(null);
+    const [currentlyWorking, setCurrentlyWorking] = useState(false);
 
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        fetch()
+        const video_id_regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/g;
+        let groupArray = [...query.matchAll(video_id_regex)];
+        let firstGroup = groupArray.map(m => m[1]);
+        if(!!query && query !== "" && firstGroup.length !== 0) {
+            setCurrentlyWorking(true);
+            fetch(database_url)
+                .then((r) => r.text())
+                .then(text => {
+                    setCurrentlyWorking(false);
+                    setResult(true);
+                    let videoID = firstGroup[0];
+                    let lines = text.split("\n");
+                    for(let line in lines) {
+                        if(lines[line] === videoID) {
+                            setResult(false);
+                            return;
+                        }
+                    }
+                    setResult(true);
+                })
+                .catch((err) => {
+                    console.log(err);
+                    setResult(null);
+                    setError("An error ocurred, please check the log!");
+                })
+        } else if (firstGroup.length === 0) {
+            setResult(null);
+            setError("The entered URL is not a valid YouTube link!");
+        }
+
     };
 
     const openRickRoll = () => {
@@ -26,32 +56,39 @@ export default function App() {
     };
 
     const getCurrentStatusMessage = () => {
-        if(currentlyWorking) {
+        if(query === "") {
+            return (
+                <div className="statusWrapper">
+                    <FontAwesomeIcon className={"statusIcon notSafe"} icon={faTimes} />
+                    <span className={"statusText notSafe"}>Please enter a URL</span>
+                </div>
+            );
+        } else if(currentlyWorking) {
             return(
                 <div className="statusWrapper">
                     <FontAwesomeIcon className={"statusIcon spinner"} icon={faCircleNotch} />
                     <span className={"statusText"}>Checking your url…</span>
                 </div>
             );
-        } else if(!!result && result === false) {
+        } else if(result === false) {
             return(
                 <div className="statusWrapper">
                     <FontAwesomeIcon className={"statusIcon notSafe"} icon={faTimes} />
                     <span className={"statusText notSafe"}>Looks like someone tried to rickroll you!</span>
                 </div>
             );
-        } else if (!!result && result === true) {
+        } else if (result === true) {
             return(
                 <div className="statusWrapper">
                     <FontAwesomeIcon className={"statusIcon safe"} icon={faCheck} />
                     <span className={"statusText safe"}>The provided link is safe to visit.</span>
                 </div>
             );
-        } else {
+        } else if (result === null) {
             return(
                 <div className="statusWrapper">
                     <FontAwesomeIcon className={"statusIcon error"} icon={faBug} />
-                    <span className={"statusText error"}>oof! We couldn't fetch our database!</span>
+                    <span className={"statusText error"}>{error}</span>
                 </div>
             );
         }
@@ -61,10 +98,10 @@ export default function App() {
     return(
       <div>
           <h1>FrickRoll!</h1>
-          <h4>Never, ever get rickrolled again!</h4>
+          <h4>Never gonna give you a rickroll again!</h4>
           <form onSubmit={handleFormSubmit}>
-              <input id="url" type="url" placeholder="Enter suspicious link here…" onChange={e => setQuery(e.target.value)}/>
-              <button type="submit" disabled={currentlyWorking}>Check</button>
+              <input id="url" type="url" placeholder="Enter suspicious link here…" disabled={currentlyWorking} onChange={e => setQuery(e.target.value)}/>
+              <button type="submit" disabled={currentlyWorking || query === "" || !query}>Check</button>
           </form>
 
           {getCurrentStatusMessage()}
