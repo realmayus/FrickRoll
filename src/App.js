@@ -100,7 +100,7 @@ export default function App() {
           <h1>FrickRoll!</h1>
           <h4>Never gonna give you a rickroll again!</h4>
           <form onSubmit={handleFormSubmit}>
-              <input id="url" type="url" placeholder="Enter suspicious link here…" disabled={currentlyWorking} onChange={e => setQuery(e.target.value)}/>
+              <input id="url" type="url" placeholder="Enter suspicious link here…" disabled={currentlyWorking} onChange={e => {setQuery(e.target.value); setResult(undefined)}}/>
               <button type="submit" disabled={currentlyWorking || query === "" || !query}>Check</button>
           </form>
 

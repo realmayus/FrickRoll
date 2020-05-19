@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4685bf25-4599-4901-89f6-3533b572c63c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="4685bf25-4599-4901-89f6-3533b572c63c" name="Default Changelist" comment="Initial Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
@@ -75,7 +73,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1589915666026</updated>
-      <workItem from="1589915667243" duration="12262000" />
+      <workItem from="1589915667243" duration="12962000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1589924715296</created>
@@ -108,22 +106,22 @@
       <screen x="1280" y="0" width="1680" height="1050" />
     </state>
     <state x="1994" y="437" key="Github.ShareDialog/1280.0.1680.1050/0.80.1280.1024@1280.0.1680.1050" timestamp="1589924749903" />
-    <state width="1659" height="283" key="GridCell.Tab.0.bottom" timestamp="1589923236076">
+    <state width="1659" height="283" key="GridCell.Tab.0.bottom" timestamp="1589928083802">
       <screen x="1280" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="283" key="GridCell.Tab.0.bottom/1280.0.1680.1050/0.80.1280.1024@1280.0.1680.1050" timestamp="1589923236076" />
-    <state width="1659" height="283" key="GridCell.Tab.0.center" timestamp="1589923236076">
+    <state width="1659" height="283" key="GridCell.Tab.0.bottom/1280.0.1680.1050/0.80.1280.1024@1280.0.1680.1050" timestamp="1589928083802" />
+    <state width="1659" height="283" key="GridCell.Tab.0.center" timestamp="1589928083801">
       <screen x="1280" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="283" key="GridCell.Tab.0.center/1280.0.1680.1050/0.80.1280.1024@1280.0.1680.1050" timestamp="1589923236076" />
-    <state width="1659" height="283" key="GridCell.Tab.0.left" timestamp="1589923236076">
+    <state width="1659" height="283" key="GridCell.Tab.0.center/1280.0.1680.1050/0.80.1280.1024@1280.0.1680.1050" timestamp="1589928083801" />
+    <state width="1659" height="283" key="GridCell.Tab.0.left" timestamp="1589928083801">
       <screen x="1280" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="283" key="GridCell.Tab.0.left/1280.0.1680.1050/0.80.1280.1024@1280.0.1680.1050" timestamp="1589923236076" />
-    <state width="1659" height="283" key="GridCell.Tab.0.right" timestamp="1589923236076">
+    <state width="1659" height="283" key="GridCell.Tab.0.left/1280.0.1680.1050/0.80.1280.1024@1280.0.1680.1050" timestamp="1589928083801" />
+    <state width="1659" height="283" key="GridCell.Tab.0.right" timestamp="1589928083801">
       <screen x="1280" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="283" key="GridCell.Tab.0.right/1280.0.1680.1050/0.80.1280.1024@1280.0.1680.1050" timestamp="1589923236076" />
+    <state width="1659" height="283" key="GridCell.Tab.0.right/1280.0.1680.1050/0.80.1280.1024@1280.0.1680.1050" timestamp="1589928083801" />
     <state x="1720" y="265" key="Vcs.Push.Dialog.v2" timestamp="1589928055671">
       <screen x="1280" y="0" width="1680" height="1050" />
     </state>
