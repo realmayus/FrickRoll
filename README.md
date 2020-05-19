@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FrickRoll
+A webapp that checks whether a URL leads to a rick-roll video or not.
+
 
 ## Available Scripts
 
